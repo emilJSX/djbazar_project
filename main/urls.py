@@ -26,5 +26,5 @@ if 'rosetta' in settings.INSTALLED_APPS:
         re_path(r'^rosetta/', include('rosetta.urls'))
     ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

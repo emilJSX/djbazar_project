@@ -194,4 +194,4 @@ if DEBUG:
         os.path.join(BASE_DIR, "static")
     ]
 else:
-    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+    STATIC_ROOT = os.path.join(BASE_DIR, "static2")
