@@ -39,7 +39,7 @@ class Product(models.Model):
    
     def image_tag(self):
         from django.utils.html import mark_safe
-        return mark_safe(f'<img src="{self.img.url}" width="300" height="300" />')
+        return mark_safe('<img src="{}" width="300" height="300" />'.format(self.img.url))
     image_tag.short_description = 'Image'
     image_tag.allow_tags = True
 

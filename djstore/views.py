@@ -167,8 +167,8 @@ def contact_view(request):
             contact_content = request.POST.get('message')
 
             subject = contact_subject
-            from_email = f"{settings.EMAIL_HOST_USER}"
-            to = [f"{settings.EMAIL_HOST_USER}"]
+            from_email = settings.EMAIL_HOST_USER
+            to = [settings.EMAIL_HOST_USER]
 
             ctx = {
 
