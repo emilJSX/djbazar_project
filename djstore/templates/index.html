@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  #category {
+
+    color: violet;
+
+
+  }
+
+  .lock {
+
+    margin-right: 10%;
+  }
+
+  @media only screen and (max-width: 440px) {
+
+    .lock {
+
+      margin-right: 15%;
+
+    }
+
+  }
+
+  @media only screen and (max-width: 330px) {
+
+    .lock {
+      margin-right: 20%;
+    }
+  }
+</style>
+<br><br>
+{% for banner in top_banner %}
+    <img style="height: 11em;
+width: 100%;" src="{{banner.banner_top.url}}" alt="">
+{% endfor %}
+
+</div>
+<div class="row">
+  {% for banner in banner_left %}
+  <div class="col-md-2">
+    <img style="width: 100%;
+height: 40.5em;" src="{{banner.banner_left.url}}" />
+  </div>
+  {% endfor %}
+  <div class="col-md-8">
+    <form action="" class="search-location mt-md-6">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-sm-10 align-items-end">
+          <div class="form-group">
+            <div class="form-field">
+              <div class="row">
+                <input name='q' type="text" class="form-control" placeholder="{% trans 'Axtariş...' %}">
+                <button class="lock"><span class="ion-ios-search"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+    <div class="mouse">
+      <a href="#" class="mouse-icon">
+        <div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
+      </a>
+    </div>
+  <section class="ftco-section ftco-no-pb">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12 text-center ftco-animate mb-5">
+          <span class="subheading">{% trans 'Kateqoriyalar' %}</span>
+          <h2 class="mb-2">{% trans 'Mehsulların Kateqoriyaları' %}</h2>
+        </div>
+      </div>
+      <div class="row d-flex">
+        <!-- for a salinacag {categoriyalar} -->
+        {% for category in categories %}
+        <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services d-block text-center">
+            <div class="view">
+              <span><img class="img_two" style="border-radius:50%;width: 100px;height:100px"
+                  src="{{category.image.url}}" alt=""></span> <a id="category"
+                style="text-decoration: none;font-size:35px;" href="?cat={{category}}">{{category}}</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+  {% for banner in banner_right %}
+<div class="col-md-2">
+  <img style="width: 100%;
+height: 40.5em;" src="{{banner.banner_right.url}}" />
+</div>
+{% endfor %}
+</div>
+
+
+<section class="ftco-section goto-here">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+        <span class="subheading">Dj Bazar</span>
+        <h2 class="mb-2">{% trans 'VIP' %}</h2>
+      </div>
+    </div>
+    <div class="row">
+      {% if messages %}
+      <ul class="messages">
+
+        {% for message in messages %}
+        {%if "toroduct" in message.tags %}
+        <li {% if message.tags %} class="alert alert-danger" {% endif %}>{{ message }}</li>
+        {%endif%}
+
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% for topproduct in topproducts %}
+      <div class="col-md-4">
+        <div class="property-wrap ftco-animate ">
+          <a href="{% url 'djstore:top-product-detail' topproduct.id %}">
+            <img style="margin-bottom:20px; width:100%;" class="img" src="{{topproduct.img.url}}" />
+          </a>
+          <div class="text">
+            <p class="price"><span>{% trans 'Qiymət' %}: </span><span>{{topproduct.price}}<small>azn</small></span>
+            </p>
+            <p>{% trans 'Ad' %} : {{topproduct.name | title}}</p>
+            <h3><a href="#">{% trans 'Haqqında' %}:{{topproduct.description | truncatewords:15 | title}}</a></h3>
+            <span class="location">{{topproduct.address| truncatewords:15}}</span><br>
+            <span class="location">{{topproduct.date|date:'d/m/Y'}}</span>
+            <a href="{% url 'djstore:top-product-detail' topproduct.id %}"
+              class="d-flex align-items-center justify-content-center btn-custom">
+              <span class="ion-ios-link"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+</div>
+</div>
+
+<section class="ftco-section goto-here">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+        <span class="subheading">Dj Bazar</span>
+        <h2 class="mb-2">{% trans 'Mehsullar' %}</h2>
+      </div>
+    </div>
+    <div class="row">
+      {% if messages %}
+
+      <ul class="messages">
+        {% for message in messages %}
+        {%if "product" in message.tags %}
+        <li{% if message.tags %} class="alert alert-danger" {% endif %}>{{ message }}</li>
+          {%endif%}
+
+          {% endfor %}
+      </ul>
+      {% endif %}
+      {% for producting in products %}
+      <div style="height: 100%" class="col-md-4">
+        <div class="property-wrap ftco-animate "><a href="{% url 'djstore:product-detail' producting.id %}">
+            <img style="max-width:940px ;max-height:720px;" class="img" src="{{producting.img.url}}">
+          </a>
+          <div class="text">
+            <p class="price"><span>{% trans 'Qiymət' %}: </span><span>{{producting.price}} <small>azn</small></span></p>
+            <p>{% trans 'Ad' %}:{{producting.name | title}}</p>
+            <h3><a href="#">{% trans 'Haqqında' %}:{{producting.description| truncatewords:15 | title}}</a></h3>
+            <span class="location">{{producting.number}}</span><br>
+            <span class="location">{{producting.date|date:'d/m/Y'}}</span>
+            <a href="{% url 'djstore:product-detail' producting.id %}"
+              class="d-flex align-items-center justify-content-center btn-custom">
+              <span class="ion-ios-link"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <ul style="margin-left: 2%;" class="pagination">
+      {% if page_obj.has_previous %}
+      <li><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+      {% endif %}
+      {% for i in paginator.page_range %}
+      {% if page_obj.number == i %}
+      <li class="page-item active"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+      <li><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+      {% endif %}
+      {% endfor %}
+      {% if page_obj.has_next %}
+      <li> <a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+
+      {% endif %}
+    </ul>
+  </div>
+</section>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img class="image_overlay" src="../../static/images/dj-mixer.jpg">
+    </div>
+    <div class="col-md-6">
+      <audio class="audi" controls id="audioPlayer">
+        {% trans "Sorry, your brouser doesn't support this player." %}
+      </audio>
+      <div id="playlistscroll">
+        <h3 style="text-align:center; font-family:Georgia, 'Times New Roman', Times, serif;">
+          {% trans "Mahnıların Sıyahı" %} </h3>
+        <hr>
+        <ul id="playlist">
+          <li> <img class="img_one" style="width: 3em;" src="../../static/images/icons8-play-64.png"> <a
+              href="{% static '/files/Rafo-Cricket(OriginMix).mp3' %}">Rafo Cricket</a>
+            <p style="float:right;">6:57</p>
+          </li>
+          <li> <img class="img_one" style="width: 3em;" src="../../static/images/icons8-play-64.png"> <a
+              href="{% static '/files/Aydin-Take(Original Mix).mp3' %}">Aydin-Take</a>
+            <p style="float:right;">7:32</p>
+          </li>
+          <li> <img class="img_one" style="width: 3em;" src="../../static/images/icons8-play-64.png"> <a
+              href="{% static '/files/My Game(Original Mix).mp3' %}">My Game</a>
+            <p style="float:right;">5:34</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% if is_paginated %}
+
+{% endif %}
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% load widget_tweaks %}
+
+{% block nav-extends %}
+	      
+
+	          <li class="nav-item "><a href="{% url 'djstore:home' %}" class="nav-link">Ana səhifə</a></li>
+	          <li class="nav-item "><a href="{% url 'djstore:product' %}" class="nav-link">Məhsul yarat</a></li>
+	          <li class="nav-item active"><a href="{% url 'djstore:contact' %}" class="nav-link">Kontakt</a></li>
+            <li class="nav-item"><p style="margin-top: 13px; margin-left: 16px;">
+            <i class="fa fa-phone"></i> 050 530 55 50</p>
+	        
+    {% endblock %}
+
+
+{% block body %}
+
+<style>
+
+body{
+
+  color:white;
+  background:#333333;
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link{
+
+  color: black;
+}
+
+.ftco-navbar-light .navbar-brand{
+  color: white;
+  font-weight: bold;
+}
+
+a{
+
+  color: white;
+  font-weight: bold;
+}
+
+a.selected{
+  color: gold;
+
+}
+.ftco-navbar-light .navbar-nav > .nav-item.active > a{
+  color: black;
+}
+
+</style>
+
+
+
+</style>
+<div style="background-image: url(https://i.pinimg.com/originals/b8/d5/54/b8d5540b26319056b5305d8d21566168.jpg); 
+ background-repeat: no-repeat; background-size: 100%;">
+<div class="row">
+
+<div class="col-sm-6">
+	<br>
+	{% if messages %}
+	
+  {% endif %}
+  
+ 
+  <form style="margin-left:3em; margin-top: 7em;" method="post" enctype="multipart/form-data">
+    <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% csrf_token %}
+    <h1 style="color:white" >{% trans 'Kontakt' %}</h1>
+
+    {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+
+    {% for field in form.visible_fields %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+      <button   class="btn btn-success" style="padding:10px 40px;" type="submit">{% trans 'Göndər'%}</button>
+</form>
+
+
+</div>
+
+
+</div>
+
+
+
+
+{% endblock %}

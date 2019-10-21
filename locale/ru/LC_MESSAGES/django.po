@@ -1,0 +1,251 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-17 14:02+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: djstore/forms.py:25
+msgid "Adinizi daxil edin..."
+msgstr "Введите своё имя..."
+
+#: djstore/forms.py:26
+msgid "E-mail daxil edin..."
+msgstr "Введите свою почту..."
+
+#: djstore/forms.py:27
+msgid "Başlığ"
+msgstr "Заголовок"
+
+#: djstore/forms.py:28
+msgid "Probleminizi izah edin..."
+msgstr "Опишите свою проблему..."
+
+#: djstore/templates/index.html:49
+msgid "Axtariş..."
+msgstr "Поиск..."
+
+#: comments/forms.py:14
+msgid "Fikirinizi təsvir edin..."
+msgstr "Оставьте отзыв..." 
+
+#: comments/forms.py:13
+msgid "Adınızı daxil edin..."
+msgstr "Введите своё имя..."
+
+
+#: djstore/models.py:30 djstore/models.py:63
+#: djstore/templates/description.html:46 djstore/templates/index.html:145
+#: djstore/templates/index.html:190
+msgid "Ad"
+msgstr "Имя"
+
+#: djstore/models.py:31 djstore/templates/description.html:50
+#: djstore/templates/index.html:143 djstore/templates/index.html:189
+msgid "Qiymət"
+msgstr "Цена"
+
+#: djstore/models.py:33 djstore/templates/index.html:146
+#: djstore/templates/index.html:191
+msgid "Haqqında"
+msgstr "Описание товара"
+
+#: djstore/models.py:34
+msgid "Şəkil"
+msgstr "Фото"
+
+#: djstore/models.py:35 djstore/templates/index.html:91
+msgid "Kateqoriyalar"
+msgstr "Kатегория"
+
+#: djstore/models.py:64
+#, fuzzy
+#| msgid "E-mail"
+msgid "Email"
+msgstr "E-mail"
+
+#: djstore/models.py:65
+msgid "Mövzu"
+msgstr "Tема"
+
+#: djstore/models.py:66
+msgid "Mesaj"
+msgstr "Cообщение"
+
+#: djstore/templates/contact.html:76 djstore/templates/description.html:9
+#: templates/base.html:97
+msgid "Kontakt"
+msgstr "Kонтакт"
+
+#: djstore/templates/createproduct.html:40 djstore/templates/description.html:8
+#: templates/base.html:96
+msgid "Məhsul yarat"
+msgstr "Создать товар"
+
+#: djstore/templates/createproduct.html:51
+msgid "Göndər"
+msgstr "Отправить"
+
+#: djstore/templates/description.html:24
+msgid "Xüsusiyyətlər"
+msgstr "Характеристики"
+
+#: djstore/templates/description.html:27
+msgid "Açıqlama"
+msgstr "О товаре"
+
+#: djstore/templates/description.html:30
+msgid "Şərhlər"
+msgstr "Kомментарий"
+
+#: djstore/templates/description.html:64
+msgid "Rəylər"
+msgstr "Коментарии"
+
+#: templates/base.html:144
+msgid "Saytımız" 
+msgstr "Наш Сайт"
+
+#: templates/base.html:145
+msgid "Nömrə"
+msgstr "Номер телефона"
+
+#: djstore/templates/description.html:47 templates/base.html:145
+msgid "Əlaqə Nömrə"
+msgstr "Номер продавца"
+
+#: djstore/templates/description.html:48
+msgid "Kategoriya"
+msgstr "Kатегории"
+
+#: djstore/templates/description.html:49
+msgid "Yaradılma Tarixi"
+msgstr "Дата"
+
+#: djstore/templates/index.html:92
+msgid "Mehsulların Kateqoriyaları"
+msgstr "Категории продуктов"
+
+#: djstore/templates/index.html:121
+msgid "VIP"
+msgstr "VIP"
+
+#: djstore/templates/index.html:168
+msgid "Mehsullar"
+msgstr "Продукты"
+
+#: djstore/templates/index.html:228
+msgid "Sorry, your brouser doesn't support this player."
+msgstr ""
+
+#: djstore/templates/index.html:231
+msgid "Mahnıların Sıyahı"
+msgstr "Список Песен"
+
+#: djstore/templates/reklama_page.html:30
+msgid "DjBazar.az sayitinda reklam"
+msgstr "Реклама на DjBazar.az"
+
+#: djstore/templates/reklama_page.html:32 templates/base.html:138
+msgid ""
+"İşlənmiş (ikinci əl) Dj, Səs ve İşıq avadanlığların satıldığı yeganə bir "
+"platformadır."
+msgstr ""
+"Б / у (использованный) является единственной платформой для продажи "
+"диджейского, звукового и светового оборудования."
+
+#: djstore/templates/reklama_page.html:33
+msgid ""
+"DjBazar.az saytında reklam sizin brendləriniz, məhsullarınız, xidmətləriniz, "
+"aksiyalarınız və əhəmiyyətli hadisələriniz barədə məlumatı çox geniş "
+"auditoriyaya çatdırmaq üçün ən gözəl üsüllarından biridir!"
+msgstr ""
+"Реклама на DjBazar.az - это один из лучших способов донести до широкой "
+"аудитории информацию о ваших брендах, продуктах, услугах, рекламных акциях и "
+"важных событиях!"
+
+#: djstore/templates/reklama_page.html:34
+msgid ""
+"Siz həm brendinizin tanınmasının əhəmiyyətli dərəcədə artmasına, həm də "
+"məhsullarınız barədə məlumatın geniş yayılmasına nail olacaq, və həmçinin "
+"şirkətlərinizin internet saytlarının ziyarət edilməsinin sadə üsülla "
+"çoxalması imkanını əldə edəcəksiniz."
+msgstr ""
+"Вы добьетесь значительного роста узнаваемости бренда и широкой "
+"осведомленности о ваших продуктах, а также простого способа повысить "
+"видимость сайтов вашей компании. "
+
+#: djstore/templates/reklama_page.html:35
+msgid "Sizinlə əməkdaşlığa şad olardıq!"
+msgstr "Мы будем рады сотрудничать с вами!"
+
+#: djstore/views.py:42
+msgid "Axtardığınız mehsul mövcud deyil"
+msgstr "Продукт не найден"
+
+#: djstore/views.py:50
+msgid "Bu Kateqoriyada mehsul mövcud deyil"
+msgstr "В этом Категории товар не найден"
+
+#: djstore/views.py:73
+msgid "Axtardığınız məhsul mövcud deyil"
+msgstr "Продукт не найден"
+
+#: djstore/views.py:190
+msgid "Sizin mesajınız uğurla çatdırıldı. 24 saat ərzində E-poçt cavablanacağ!"
+msgstr "Ваше сообщение успешно отправлено. В течении 24ч вам ответят на E-mail"
+
+#: templates/base.html:67
+msgid "Menu"
+msgstr "Меню"
+
+#: templates/base.html:95
+msgid "Saytda Reklam"
+msgstr "Реклама на сайте"
+
+#: templates/base.html:142
+msgid "Contact"
+msgstr "Контакты"
+
+#: templates/base.html:144
+msgid "Site"
+msgstr ""
+
+#: templates/base.html:148
+msgid "Sosiyal Şəbəkələrimiz"
+msgstr "Социальные сети"
+
+#~ msgid "Rəy qoyun..."
+#~ msgstr "Оставьте отзыв..."
+
+#~ msgid "Adiniz"
+#~ msgstr "Ваше Имя"
+
+#, fuzzy
+#~| msgid "Email"
+#~ msgid "Sizin E-mail"
+#~ msgstr "Ваше E-mail"
+
+#~ msgid "Mövzü"
+#~ msgstr "Тема"
+
+#~ msgid "Sizin mesajınız"
+#~ msgstr "Ваше сообщение"
+
+#~ msgid "Ünvan"
+#~ msgstr "Адрес"

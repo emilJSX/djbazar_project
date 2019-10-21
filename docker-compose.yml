@@ -1,0 +1,43 @@
+  version: '3'
+
+  services:
+
+    psotgres:
+      container_name: postgres-db
+      image:          postgress:9.6.6
+      ports:
+        - 5432:5432
+      volumes:
+        - ./pgdb:/var/lib/postgresql/data
+      env_file: .env
+      environment:
+        - LC_ALL=C.UTF-8
+      
+    web:
+      container_name: djbazar
+      build: .
+      restart: "always"
+      env_file: .env
+      environment:
+        - VIRTUAL_HOST= djbazar.az,www.djbazar.az 
+        - VIRTUAL_PORT=8020
+        - TIMEOUT=300
+        - HTTP_PORT=8020
+        - STATS_PORT=8081
+      volumes:
+        - .:/code
+      ports:
+        - "8020:8020"
+      links:
+        - postgres
+      depends_on:
+        - "postgres"
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+
+ 
+
+#         #IP: 83.220.170.106 DOMEN: djbazar.az

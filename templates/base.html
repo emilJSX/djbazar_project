@@ -1,0 +1,358 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>DjBazar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+  <script src="https://kit.fontawesome.com/72f84f6c9c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'footer/css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/aos.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/ionicons.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.timepicker.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/flaticon.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/icomoon.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+  <style>
+    #lang {
+
+      color: violet;
+    }
+
+    #lang.selected {
+
+      color: blueviolet;
+    }
+
+    .page-item.active .page-link {
+
+
+      background-color: blueviolet;
+
+    }
+
+    .bg-dark {
+      background-color: white !important;
+      margin-top: -1em;
+      color: black !important;
+    }
+
+
+    @media (max-width:320px) {
+
+      .col-md-2 {
+        display:none !important;
+      }
+
+      .navbar-toggler {
+        color: black !important;
+        margin-left: 13em !important;
+        margin-top: -2.8em !important;
+      }
+
+      .scrolled .img {
+        width: 65% !important;
+        margin-top: 0em !important;
+      }
+
+      .scrolled {
+        margin-left: -0.3em !important;
+      }
+
+      .form-control {
+        margin-left: 1em !important;
+        width: 89% !important;
+      }
+
+      .lock {
+        left: 14.8em !important;
+        margin-top: 16px !important;
+      }
+
+      #category {
+        font-size: 16px !important;
+      }
+
+      .image_overlay {
+        display: none !important;
+      }
+
+      .audi {
+        margin-left: -11px !important;
+      }
+
+      #playlistscroll {
+        width: 100% !important;
+        margin-left: -15px !important;
+      }
+    }
+
+    @media (max-width:375px) {
+      a .img {
+        width: 52%;
+        margin-top: 1em !important;
+        margin-left: -2em !important;
+      }
+
+      .col-md-2 {
+        display:none !important;
+      }
+
+      .io-menu {
+        color: black !important;
+        margin-left: 19em !important;
+        top: -2.4em !important;
+      }
+
+      .navbar-toggler {
+        color: black !important;
+        margin-left: 15em;
+        margin-top: -3em;
+      }
+
+      .form-control {
+        margin-left: 1em !important;
+        width: 91% !important;
+      }
+
+      .lock {
+        display: none;
+      }
+
+      .image_overlay {
+        display: none !important;
+      }
+
+      .audi {
+        margin-left: -11px !important;
+      }
+
+      #playlistscroll {
+        width: 100% !important;
+        margin-left: -1em !important;
+      }
+
+      form {
+        margin-left: 1em !important;
+        margin-top: 7em !important;
+      }
+    }
+
+    @media (max-width:425px) {
+      a .img {
+        width: 47%;
+        margin-top: 1em;
+        margin-left: -2em;
+      }
+
+      .col-md-2 {
+        display:none !important;
+      }
+
+      .navbar-toggler {
+        color: black !important;
+        margin-left: 14em !important;
+        margin-top: -3.1em !important;
+      }
+
+      form {
+        margin-left: 1em !important;
+        margin-top: 7em !important;
+      }
+
+      .form-control {
+        margin-left: 0em !important;
+        width: 96% !important;
+        margin-top: -1em !important;
+      }
+
+      .lock {
+        margin-top: -9px !important;
+      }
+
+      .image_overlay {
+        display: none !important;
+      }
+
+      .audi {
+        margin-left: -8px;
+      }
+
+      #playlistscroll {
+        margin-left: -1em;
+        width: 100%;
+      }
+    }
+  </style>
+      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+
+          <a href="{% url 'djstore:home' %}"> <img class="img" style="" src="{% static 'images/djb.png' %}"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> {% trans 'Menu' %}
+
+          </button>
+
+          <div class="collapse navbar-collapse" id="ftco-nav">
+
+            <ul class="navbar-nav ml-auto">
+
+              {% get_current_language as LANGUAGE_CODE %}
+              {% get_available_languages as LANGUAGES %}
+              {% get_language_info_list for LANGUAGES as languages %}
+              <div style="margin-top: 15px; margin-left: -38em;" class="languages">
+
+
+                {% for language in languages %}
+
+                <a id="lang" href="/{{ language.code }}/" {% if language.code == LANGUAGE_CODE %}
+                  style="padding:10px 10px " class="selected" {% endif %}>
+                  {{ language.code | upper }}
+                </a>
+
+                {% endfor %}
+
+
+              </div>
+
+              {% block nav-extends %}
+
+              <li class="nav-item active"><a href="{% url 'djstore:reklama' %}"
+                  class="nav-link">{% trans 'Saytda Reklam' %} </a></li>
+              <li class="nav-item"><a href="{% url 'djstore:product' %}" class="nav-link">{% trans 'Məhsul yarat' %}</a>
+              </li>
+              <li class="nav-item"><a href="{% url 'djstore:contact' %}" class="nav-link">{% trans 'Kontakt' %}</a></li>
+              <li class="nav-item">
+                <p style="margin-top: 13px; margin-left: 16px;">
+                  <i class="fa fa-phone"></i> 050 530 55 50</p>
+                {% endblock %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    <style>
+      body {
+        overflow-x: hidden;
+
+      }
+    </style>
+
+
+
+    {% block body %}
+
+
+    {% endblock %}
+
+    <br>
+    <br>
+    <br>
+
+
+    <footer>
+      <div style="margin-top: 22em;" class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-lg-4 footer-about wow fadeInUp">
+              <h2 style="color:white">DjBazar.az</h2>
+              <p>
+                {% trans 'İşlənmiş (ikinci əl) Dj, Səs ve İşıq avadanlığların satıldığı yeganə bir platformadır.'%}
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown">
+              <h3>{% trans 'Contact' %}</h3>
+              <p><i class="fas fa-envelope"></i> E-mail: <a href="mailto:hello@domain.com">djbazar@djstore.az</a></p>
+              <p><i class="fa fa-rss"></i> {% trans 'Saytımız'%}: <a
+                  href="http://djstore.az/index.php?">www.djstore.az</a></p>
+              <p><i class="fa fa-phone"> {% trans  'Nömrə' %}:</i> 050 530 55 50</p>
+            </div>
+            <div class="col-md-4 col-lg-3 footer-social wow fadeInUp">
+              <h3>{% trans 'Sosiyal Şəbəkələrimiz' %}</h3>
+              <p>
+                <a target="_blank" href="https://www.facebook.com/djstore.az/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/djstore.az/"><i class="fab fa-instagram"></i></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 footer-copyright">
+              <p>&copy; Copyright 2019. by DJBAZAR </p>
+            </div>
+            <div class="col-md-7 footer-menu">
+              <nav class="navbar navbar-dark navbar-expand-md">
+
+
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+          stroke="#F96D00" /></svg></div>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'footer/js/scripts.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+    <script src="{% static 'js/scrollax.min.js' %}"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'styles/bootstrap-4.1.2/popper.js' %}"></script>
+    <script src="{% static 'styles/bootstrap-4.1.2/bootstrap.min.js'%}"></script>
+    <script src="{% static 'plugins/greensock/TweenMax.min.js'%}"></script>
+    <script src="{% static 'plugins/greensock/TimelineMax.min.js'%}"></script>
+    <script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js'%}"></script>
+    <script src="{% static 'plugins/greensock/animation.gsap.min.js'%}"></script>
+    <script src="{% static 'plugins/greensock/ScrollToPlugin.min.js'%}"></script>
+    <script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js'%}"></script>
+    <script src="{% static 'plugins/easing/easing.js'%}"></script>
+    <script src="{% static 'plugins/progressbar/progressbar.min.js'%}"></script>
+    <script src="{% static 'plugins/parallax-js-master/parallax.min.js'%}"></script>
+    <script src="{% static 'plugins/jPlayer/jquery.jplayer.min.js'%}"></script>
+    <script src="{% static 'plugins/jPlayer/jplayer.playlist.min.js'%}"></script>
+    <script src="{% static 'js/custom.js'%}"></script>
+    <script src="{% static 'js/player.js' %}"></script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+
+<style>
+    .dur {
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        margin-top: 9em;
+        color: coral;
+    }
+    h4 {
+        color: grey;
+        font-weight: 600;
+    }
+    h1 {
+        font-family: serif;
+    }
+
+    h5 {
+        font-family: serif;
+        font-weight: 700;
+    }
+</style>
+
+<div class="dur">
+    <h1>{% trans 'DjBazar.az sayitinda reklam' %}</h1>
+    <hr>
+    <h4> {% trans "İşlənmiş (ikinci əl) Dj, Səs ve İşıq avadanlığların satıldığı yeganə bir platformadır." %} </h4>
+    <h4> {% trans "DjBazar.az saytında reklam sizin brendləriniz, məhsullarınız, xidmətləriniz, aksiyalarınız və əhəmiyyətli hadisələriniz barədə məlumatı çox geniş auditoriyaya çatdırmaq üçün ən gözəl üsüllarından biridir!" %} </h4>
+    <h4>{% trans "Siz həm brendinizin tanınmasının əhəmiyyətli dərəcədə artmasına, həm də məhsullarınız barədə məlumatın geniş yayılmasına nail olacaq, və həmçinin şirkətlərinizin internet saytlarının ziyarət edilməsinin sadə üsülla çoxalması imkanını əldə edəcəksiniz." %} </h4>
+    <h5> {% trans "Sizinlə əməkdaşlığa şad olardıq!" %} </h5>
+
+    <p>050 530 55 50</p>
+    <p>djbazar@djstore.az</p>
+</div>
+
+
+
+{% endblock %}
