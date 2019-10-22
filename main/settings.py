@@ -194,11 +194,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 STATIC_URL = '/static/'
 if DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, "static2")
+else:
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, "static")
     ]
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, "static2")
 
 # STATICFILES_DIRS = [
 #         os.path.join(BASE_DIR, "static")
